@@ -75,7 +75,7 @@ function newEngineer () {
         },
         {
             type: 'input',
-            name: 'email',
+            name: 'github',
             message: 'What is your engineers github username?'
         },
         {
@@ -99,10 +99,51 @@ function newEngineer () {
     })
 }
 
-
-
-
 // and intern questions
+function newIntern () {
+    console.log('this user would like to add an Intern!')
+    //const questions2 = 
+    inquirer.prompt([
+        {
+            type: 'input',
+            name: 'name',
+            message: 'What is your Interns name?'
+        },
+        {
+            type: 'input',
+            name: 'id',
+            message: 'What is your Interns id?'
+        },
+        {
+            type: 'input',
+            name: 'email',
+            message: 'what is your Interns email?'
+        },
+        {
+            type: 'input',
+            name: 'school',
+            message: 'What is your Interns school?'
+        },
+        {
+            // what kind of employee would you like to add
+            type: 'list',
+            name: 'teamMember',
+            message: 'Which Type of team member would you like to add?',
+            choices: [
+               'Engineer',
+                'Intern',
+                'I am done adding team members'
+            ]
+        }
+    ]).then(answers => {
+        console.log(answers)
+        if (answers.teamMember === 'Intern') {
+            console.log('They want to add another gotdamn Intern')
+            newIntern()      
+        }
+    })
+}
+
 // that will be new inquirer calls
 // ask what you would like to add at the end
 // call function at the end to give option to re render questions
