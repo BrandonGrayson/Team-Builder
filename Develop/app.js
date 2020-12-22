@@ -11,6 +11,7 @@ const outputPath = path.join(OUTPUT_DIR, "team.html");
 const render = require("./lib/htmlRenderer");
 
 // use inquirer to prompt user
+// generate an array of questions
 const questions = [
     {
         type: 'input',
@@ -33,6 +34,7 @@ const questions = [
         message: 'What is your managers office number?'
     },
     {
+        // what kind of employee would you like to add
         type: 'list',
         name: 'teamMember',
         message: 'Which Type of team member would you like to add?',
@@ -45,19 +47,67 @@ const questions = [
 ]
 inquirer.prompt(questions).then(answers => {
     console.log(answers)
+    if (answers.teamMember === 'Engineer') {
+        newEngineer()
+    }
 })
-
-// ask user which type of user are they
-// generate an array of questions
 // based on what type of user they are
 
-// who is manager?
-// what kind of employee would you like to add
+// create a function for engineer questions 
+function newEngineer () {
+    console.log('this user would like to add an engineer!')
+    //const questions2 = 
+    inquirer.prompt([
+        {
+            type: 'input',
+            name: 'name',
+            message: 'What is your Engineers name?'
+        },
+        {
+            type: 'input',
+            name: 'id',
+            message: 'What is your engineers id?'
+        },
+        {
+            type: 'input',
+            name: 'email',
+            message: 'what is your engineers email?'
+        },
+        {
+            type: 'input',
+            name: 'email',
+            message: 'What is your engineers github username?'
+        },
+        {
+            // what kind of employee would you like to add
+            type: 'list',
+            name: 'teamMember',
+            message: 'Which Type of team member would you like to add?',
+            choices: [
+               'Engineer',
+                'Intern',
+                'I am done adding team members'
+            ]
+        }
+    ]).then(answers => {
+        console.log(answers)
+        if (answers.teamMember === 'Engineer') {
+            console.log('They want to add another gotdamn engineer')
+            newEngineer()
+            
+        }
+    })
+}
 
-// create a function for engineer questions and intern questions
-// that will be no inquirer calls
-// ask what you would like to add at then end
+
+
+
+// and intern questions
+// that will be new inquirer calls
+// ask what you would like to add at the end
 // call function at the end to give option to re render questions
+
+
 
 // Write code to use inquirer to gather information about the development team members,
 // and to create objects for each team member (using the correct classes as blueprints!)
