@@ -62,7 +62,10 @@ inquirer.prompt(questions).then(answers => {
         newIntern()
     } else {
         console.log('They dont want to add anymore Members!')
-        render(newTeam)
+       let teamHTML = render(newTeam)
+       fs.writeFile('./output/team.html', teamHTML).catch(err => {
+        console.log(err)
+    })
     }
 })
 // based on what type of user they are
@@ -115,7 +118,10 @@ function newEngineer () {
             newIntern()
         } else {
             console.log('They dont want to add anymore Members!')
-            render(newTeam)
+            let teamHTML = render(newTeam)
+            fs.writeFile('./output/team.html', teamHTML).catch(err => {
+                console.log(err)
+            })
         }
     })
 }
@@ -168,19 +174,14 @@ function newIntern () {
             newIntern()
         } else {
             console.log('They dont want to add anymore Members!')
-            render(newTeam)
+            let teamHTML = render(newTeam)
+            fs.writeFile('./output/team.html', teamHTML).catch(err => {
+                console.log(err)
+            })
         }
     })
 }
 // after team members have been created pass them to the render function
-
-// create a new instance for each employee
-// save to var
-// create an array to store Engineers and interns
-
-// After the user has input all employees desired, call the `render` function (required
-// above) and pass in an array containing all employee objects; the `render` function will
-// generate and return a block of HTML including templated divs for each employee!
 
 // append each engineer on the screen 
 // append each intern on the screen
