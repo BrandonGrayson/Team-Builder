@@ -10,6 +10,54 @@ const outputPath = path.join(OUTPUT_DIR, "team.html");
 
 const render = require("./lib/htmlRenderer");
 
+// use inquirer to prompt user
+const questions = [
+    {
+        type: 'input',
+        name: 'mangersName',
+        message: 'What is Your Managers Name?'
+    },
+    {
+        type: 'input',
+        name: 'id',
+        message: 'what is your managers id?'
+    },
+    {
+        type: 'input',
+        name: 'email',
+        message: 'What is your managers emial?'
+    },
+    {
+        type: 'input',
+        name: 'officeNumber',
+        message: 'What is your managers office number?'
+    },
+    {
+        type: 'list',
+        name: 'teamMember',
+        message: 'Which Type of team member would you like to add?',
+        choices: [
+           'Engineer',
+            'Intern',
+            'I am done adding team members'
+        ]
+    }
+]
+inquirer.prompt(questions).then(answers => {
+    console.log(answers)
+})
+
+// ask user which type of user are they
+// generate an array of questions
+// based on what type of user they are
+
+// who is manager?
+// what kind of employee would you like to add
+
+// create a function for engineer questions and intern questions
+// that will be no inquirer calls
+// ask what you would like to add at then end
+// call function at the end to give option to re render questions
 
 // Write code to use inquirer to gather information about the development team members,
 // and to create objects for each team member (using the correct classes as blueprints!)
