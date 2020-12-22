@@ -10,12 +10,15 @@ const outputPath = path.join(OUTPUT_DIR, "team.html");
 
 const render = require("./lib/htmlRenderer");
 
+// an array to store the new team members once they're created
+const newTeam = []
+
 // use inquirer to prompt user
 // generate an array of questions
 const questions = [
     {
         type: 'input',
-        name: 'mangersName',
+        name: 'name',
         message: 'What is Your Managers Name?'
     },
     {
@@ -47,6 +50,10 @@ const questions = [
 ]
 inquirer.prompt(questions).then(answers => {
     console.log(answers)
+    // create a new Empolyee
+    let newManager = new Manager(answers.name, answers.id, answers.email, answers.officeNumber)
+    // pass new employee to the newTeam
+    newTeam.push(newManager)    
     if (answers.teamMember === 'Engineer') {
         console.log('theyd like to add an Engineer')
         newEngineer()
@@ -55,7 +62,7 @@ inquirer.prompt(questions).then(answers => {
         newIntern()
     } else {
         console.log('They dont want to add anymore Members!')
-        return answers
+        render(newTeam)
     }
 })
 // based on what type of user they are
@@ -98,6 +105,8 @@ function newEngineer () {
         }
     ]).then(answers => {
         console.log(answers)
+        let newEngineer = new Engineer(answers.name, answers.id, answers.email, answers.github, answers.teamMember)
+        newTeam.push(newEngineer)
         if (answers.teamMember === 'Engineer') {
             console.log('theyd like to add an Engineer')
             newEngineer()
@@ -106,7 +115,7 @@ function newEngineer () {
             newIntern()
         } else {
             console.log('They dont want to add anymore Members!')
-            return answers
+            render(newTeam)
         }
     })
 }
@@ -149,6 +158,8 @@ function newIntern () {
         }
     ]).then(answers => {
         console.log(answers)
+        let newIntern = new Intern(answers.name, answers.id, answers.email, answers.school)
+        newTeam.push(newIntern)
         if (answers.teamMember === 'Engineer') {
             console.log('theyd like to add an Engineer')
             newEngineer()
@@ -157,16 +168,23 @@ function newIntern () {
             newIntern()
         } else {
             console.log('They dont want to add anymore Members!')
-            return answers
+            render(newTeam)
         }
     })
 }
+// after team members have been created pass them to the render function
 
-// that will be new inquirer calls
-// ask what you would like to add at the end
-// call function at the end to give option to re render questions
+// create a new instance for each employee
+// save to var
+// create an array to store Engineers and interns
 
+// After the user has input all employees desired, call the `render` function (required
+// above) and pass in an array containing all employee objects; the `render` function will
+// generate and return a block of HTML including templated divs for each employee!
 
+// append each engineer on the screen 
+// append each intern on the screen
+// append the manager on the screen
 
 // Write code to use inquirer to gather information about the development team members,
 // and to create objects for each team member (using the correct classes as blueprints!)
@@ -174,6 +192,7 @@ function newIntern () {
 // After the user has input all employees desired, call the `render` function (required
 // above) and pass in an array containing all employee objects; the `render` function will
 // generate and return a block of HTML including templated divs for each employee!
+
 
 // After you have your html, you're now ready to create an HTML file using the HTML
 // returned from the `render` function. Now write it to a file named `team.html` in the
