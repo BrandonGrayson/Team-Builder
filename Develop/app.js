@@ -48,7 +48,14 @@ const questions = [
 inquirer.prompt(questions).then(answers => {
     console.log(answers)
     if (answers.teamMember === 'Engineer') {
+        console.log('theyd like to add an Engineer')
         newEngineer()
+    } else if 
+        (answers.teamMember === 'Intern') {
+        newIntern()
+    } else {
+        console.log('They dont want to add anymore Members!')
+        return answers
     }
 })
 // based on what type of user they are
@@ -92,9 +99,14 @@ function newEngineer () {
     ]).then(answers => {
         console.log(answers)
         if (answers.teamMember === 'Engineer') {
-            console.log('They want to add another gotdamn engineer')
+            console.log('theyd like to add an Engineer')
             newEngineer()
-            
+        } else if 
+            (answers.teamMember === 'Intern') {
+            newIntern()
+        } else {
+            console.log('They dont want to add anymore Members!')
+            return answers
         }
     })
 }
@@ -137,9 +149,15 @@ function newIntern () {
         }
     ]).then(answers => {
         console.log(answers)
-        if (answers.teamMember === 'Intern') {
-            console.log('They want to add another gotdamn Intern')
-            newIntern()      
+        if (answers.teamMember === 'Engineer') {
+            console.log('theyd like to add an Engineer')
+            newEngineer()
+        } else if 
+            (answers.teamMember === 'Intern') {
+            newIntern()
+        } else {
+            console.log('They dont want to add anymore Members!')
+            return answers
         }
     })
 }
