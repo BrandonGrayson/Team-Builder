@@ -10,7 +10,7 @@ class Intern extends Employee {
         return 'Intern'
     }
     getSchool (school) {
-        return 'UCLA'
+        return school
     }
 }
 
