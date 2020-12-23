@@ -56,10 +56,10 @@ inquirer.prompt(questions).then(answers => {
     newTeam.push(newManager)    
     if (answers.teamMember === 'Engineer') {
         console.log('theyd like to add an Engineer')
-        newEngineer()
+        engineerQuestions()
     } else if 
         (answers.teamMember === 'Intern') {
-        newIntern()
+        internQeustions()
     } else {
         console.log('They dont want to add anymore Members!')
        let teamHTML = render(newTeam)
@@ -71,7 +71,7 @@ inquirer.prompt(questions).then(answers => {
 // based on what type of user they are
 
 // create a function for engineer questions 
-function newEngineer () {
+const engineerQuestions = function () {
     console.log('this user would like to add an engineer!')
     //const questions2 = 
     inquirer.prompt([
@@ -112,10 +112,10 @@ function newEngineer () {
         newTeam.push(newEngineer)
         if (answers.teamMember === 'Engineer') {
             console.log('theyd like to add an Engineer')
-            newEngineer()
+            engineerQuestions()
         } else if 
             (answers.teamMember === 'Intern') {
-            newIntern()
+            internQeustions()
         } else {
             console.log('They dont want to add anymore Members!')
             let teamHTML = render(newTeam)
@@ -127,7 +127,7 @@ function newEngineer () {
 }
 
 // and intern questions
-function newIntern () {
+const internQeustions = function () {
     console.log('this user would like to add an Intern!')
     //const questions2 = 
     inquirer.prompt([
@@ -168,19 +168,20 @@ function newIntern () {
         newTeam.push(newIntern)
         if (answers.teamMember === 'Engineer') {
             console.log('theyd like to add an Engineer')
-            newEngineer()
+            engineerQuestions()
         } else if 
             (answers.teamMember === 'Intern') {
-            newIntern()
+            internQeustions()
         } else {
             console.log('They dont want to add anymore Members!')
-            let teamHTML = render(newTeam)
-            fs.writeFile('./output/team.html', teamHTML).catch(err => {
+            fs.writeFile('./output/team.html', render(newTeam)).catch(err => {
                 console.log(err)
             })
         }
     })
 }
+//let teamHTML = render(newTeam)
+
 // after team members have been created pass them to the render function
 
 // append each engineer on the screen 
