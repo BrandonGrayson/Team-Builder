@@ -63,11 +63,11 @@ inquirer.prompt(questions).then(answers => {
     } else {
         console.log('They dont want to add anymore Members!')
        let teamHTML = render(newTeam)
-       fs.writeFile('./output/team.html', teamHTML).catch(err => {
-        console.log(err)
-    })
+       fs.writeFile('./output/team.html', teamHTML, (err) =>
+       err ? console.log(err) : console.log('Success'))
     }
 })
+
 // based on what type of user they are
 
 // create a function for engineer questions 
@@ -119,9 +119,8 @@ const engineerQuestions = function () {
         } else {
             console.log('They dont want to add anymore Members!')
             let teamHTML = render(newTeam)
-            fs.writeFile('./output/team.html', teamHTML).catch(err => {
-                console.log(err)
-            })
+            fs.writeFile('./output/team.html', teamHTML, (err) =>
+            err ? console.log(err) : console.log('Success'))
         }
     })
 }
@@ -174,9 +173,9 @@ const internQeustions = function () {
             internQeustions()
         } else {
             console.log('They dont want to add anymore Members!')
-            fs.writeFile('./output/team.html', render(newTeam)).catch(err => {
-                console.log(err)
-            })
+            let teamHTML = render(newTeam)
+            fs.writeFile('./output/team.html', teamHTML, (err) =>
+            err ? console.log(err) : console.log('Success'))
         }
     })
 }
