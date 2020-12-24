@@ -8,23 +8,27 @@ Welcome to Team Builder the app that simplifies the process of assigning persone
 Node.js
 
 ## Images
-Manger Questions Example: 
+
+## Manger Questions Example: 
 
 <img width="820" alt="Screen Shot 2020-12-23 at 7 43 50 PM" src="https://user-images.githubusercontent.com/64443434/103046729-45c5e300-4557-11eb-9e6a-d9aa8a11c766.png">
 
-Engineer Question Example: 
+## Engineer Question Example: 
 
 <img width="660" alt="Screen Shot 2020-12-23 at 7 46 50 PM" src="https://user-images.githubusercontent.com/64443434/103046868-b4a33c00-4557-11eb-9ea4-3b2c61ef8d55.png">
 
-Intern Question Example: 
+## Intern Question Example: 
 
 <img width="640" alt="Screen Shot 2020-12-23 at 7 48 57 PM" src="https://user-images.githubusercontent.com/64443434/103046939-f338f680-4557-11eb-82a1-0c966aa2bb3d.png"> 
 
 ## Rendered Application Example: 
 
+<img width="1440" alt="Screen Shot 2020-12-23 at 7 53 23 PM" src="https://user-images.githubusercontent.com/64443434/103047172-a30e6400-4558-11eb-916c-4d2b95e2f7d9.png">
 
 ## Contributors
 Brandon Grayson
 
 ## Links 
 https://github.com/BrandonGrayson/Team-Builder
+
+## Instructional Video
