@@ -9,3 +9,7 @@ Node.js
 
 ## Images
 Manger Questions Example: 
+
+<img width="820" alt="Screen Shot 2020-12-23 at 7 43 50 PM" src="https://user-images.githubusercontent.com/64443434/103046729-45c5e300-4557-11eb-9e6a-d9aa8a11c766.png">
+
+Engineer Question Example: 
