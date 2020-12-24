@@ -17,3 +17,5 @@ Engineer Question Example:
 <img width="660" alt="Screen Shot 2020-12-23 at 7 46 50 PM" src="https://user-images.githubusercontent.com/64443434/103046868-b4a33c00-4557-11eb-9ea4-3b2c61ef8d55.png">
 
 Intern Question Example: 
+
+<img width="640" alt="Screen Shot 2020-12-23 at 7 48 57 PM" src="https://user-images.githubusercontent.com/64443434/103046939-f338f680-4557-11eb-82a1-0c966aa2bb3d.png">
