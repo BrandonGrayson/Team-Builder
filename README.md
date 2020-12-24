@@ -13,3 +13,7 @@ Manger Questions Example:
 <img width="820" alt="Screen Shot 2020-12-23 at 7 43 50 PM" src="https://user-images.githubusercontent.com/64443434/103046729-45c5e300-4557-11eb-9e6a-d9aa8a11c766.png">
 
 Engineer Question Example: 
+
+<img width="660" alt="Screen Shot 2020-12-23 at 7 46 50 PM" src="https://user-images.githubusercontent.com/64443434/103046868-b4a33c00-4557-11eb-9ea4-3b2c61ef8d55.png">
+
+Intern Question Example: 
