@@ -1,3 +1,11 @@
-body {
-    background-attachment: red;
+.jumbotron {
+    background-color: #F7485C;
+}
+
+.card-header {
+    background-color: #177AF2;
+}
+
+.card-body {
+    border: 2px solid #177AF2;
 }
